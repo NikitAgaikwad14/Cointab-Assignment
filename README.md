@@ -1,6 +1,6 @@
 # Cointab-Assignment
 
-1.Problem Statement
+# 1.Problem Statement
 You are a data analyst and have a large ecommerce company in India (let’s call it X) as a client.X gets a few thousand orders via their website on a daily basis and they have to deliver them as fast as they can. For delivering the goods ordered by the customers, X has tied up with multiple courier companies in India who charge them some amount per delivery.The charges are dependent upon two factors:
 
 ● Weight of the product
@@ -67,29 +67,29 @@ Count	Amount
 Total orders where X has been correctly charged		
 Total Orders where X has been overcharged		
 Total Orders where X has been undercharged		
-2. Importing Libaries
+# 2. Importing Libaries
 The following libaries and tools are used in the project.
 
 
 
-Pandas: Importing for panel data analysis
+# Pandas: Importing for panel data analysis
 
-Numpy: For numerical python operations
+# Numpy: For numerical python operations
 
-Matplotlib (Pyplot): A popular plotting library used along with pandas
+# Matplotlib (Pyplot): A popular plotting library used along with pandas
 
-Seaborn: A library, built on matplotlib, to create beautiful plots
+# Seaborn: A library, built on matplotlib, to create beautiful plots
 
-Scikit Learn: To perform all tasks realted to Machine Learning
+# Scikit Learn: To perform all tasks realted to Machine Learning
 
-3. Loadinng Data
+# 3. Loadinng Data
 The dataset has been collected from the Cointab Career Portal and the dataset in CSV format.
 
 To load the data pd.read_csv("data//path").
 
 From the data 567 rows and 13 features are gained.
 
-4 Merge the common tables:
+# 4 Merge the common tables:
 
 
 Combining a company_X_Order_Report with Courier_Company_invoice by using merge function
@@ -110,22 +110,22 @@ For merging a data table, i have used a Customer_Pincode feature and User-define
 
 Ones=pd.merge(Ex,X_post,how="inner",on="Customer_Pincode")
 
-5. Rename the columns name as per require:
+# 5. Rename the columns name as per require:
 Ones.rename(columns={"Charged Weight":"Charged_Weight","Warehouse_Pincode_x":"Company_Warehouse_Pincode", "Customer_Pincode":"Company_Customer_Pincode","Zone_x":"Company_Zone", "Warehouse_Pincode_y":"X_Warehouse_Pincode","Zone_y":"X_Zone","Weight (g)":"Weight_(g)"},inplace=True)
 
 Ones.rename(columns={"Company_Zone":"Delivery_Zone_charged_by_Courier_Company","X_Zone":"Delivery_Zone_as_per_X"},inplace=True)
 
 Ones.rename(columns={"Charged_Weight":"Total_weight_as_per_Courier_Company_(KG)"},inplace=True)
 
-6. Calculation:
+# 6. Calculation:
 Multiplication of Weight(g)*Order_qty, to find out the Total_weight_as_per_X(g)
 Convertion of gram to Kg of the total weight as per X company
 *Ones["Total_weight_as_per_X(g)"]=Ones["Order_Qty"]Ones["Weight_(g)"]
 
 Ones["Total_weight_as_per_X(Kg)"]=Ones["Total_weight_as_per_X(g)"]/1000
 
-7. If condition To find out the Weight_slab_charged_by_Courier_Company_(KG),Expected_Charge_as_per_X_(Rs.),Charges_Billed_by_Courier_Company_(Rs.) and Difference_Between_Expected_Charges_and_Billed_Charges_(Rs.)
-8. Conclusion:
+# 7. If condition To find out the Weight_slab_charged_by_Courier_Company_(KG),Expected_Charge_as_per_X_(Rs.),Charges_Billed_by_Courier_Company_(Rs.) and Difference_Between_Expected_Charges_and_Billed_Charges_(Rs.)
+# 8. Conclusion:
 Summary Table	Count	Amount
 Total orders where X has been correctly charged	17	1642.4
 Total Orders where X has been overcharged	537	44676.1
